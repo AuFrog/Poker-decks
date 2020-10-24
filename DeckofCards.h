@@ -2,6 +2,8 @@
 #define DECKOFCARDS_H
 
 #include<vector>
+#include<thread>
+#include<mutex>
 #include"Card.h"
 
 using namespace std;
@@ -23,14 +25,15 @@ public:
 
 	DeckofCards();
 	void shuffle();
-	vector<Card> deal();
+	vector<Card> deal(string& s);
+	//vector<Card> deal();
 
 	//int sortCard();
 	//int pairCard(int* sortFace);
 	
 private:
 	vector<Card> deck;
-	int current;
-
+	/*int current;*/
+	mutex mutex;
 };
 #endif // !DECKOFCARDS_H

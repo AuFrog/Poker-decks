@@ -24,6 +24,8 @@ public:
 		return ranking < m.ranking;
 	}
 
+
+
 private:
 	string name;
 	int ranking;

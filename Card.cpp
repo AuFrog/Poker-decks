@@ -13,6 +13,7 @@ string Card::toString() {
 int Card::getFace() { return face;}
 int Card::getSuit() { return suit; }
 
+//In this case, the Ace is always 14, higher than King
 const string Card::faceNames[faces] = {
 	"Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten",
 	"Jack","Queen","King","Ace"
