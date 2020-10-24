@@ -206,19 +206,15 @@ void compare(HandofCards d1, HandofCards d2, HandofCards d3, HandofCards d4) {
 
 	stable_sort(temp.begin(), temp.end(), less<HandofCards>());
 
-	/// All four hands are the same ranking.
 	if (temp[0].getRanking() == temp[1].getRanking() && temp[1].getRanking() == temp[2].getRanking() && temp[2].getRanking() == temp[3].getRanking()) {
 		cout << "Four player draw." << endl;
 	}
-	/// Three same.
 	else if (temp[1].getRanking() == temp[2].getRanking() && temp[2].getRanking() == temp[3].getRanking()) {
 		cout << "Player " << temp[1].getName() << ", " << temp[2].getName() << ", " << temp[3].getName() << " are the best (same ranking)." << endl;
 	}
-	/// Two same.
 	else if (temp[2].getRanking() == temp[3].getRanking()) {
 		cout << "Player " << temp[2].getName() << ", " << temp[3].getName() << " are the best (same ranking).";
 	}
-	/// All defferent.
 	else {
 		cout << "Player " << temp[3].getName() << " is the best.";
 	}
@@ -229,10 +225,9 @@ void compare(HandofCards d1, HandofCards d2, HandofCards d3, HandofCards d4) {
 int main()
 
 {	
-	///Create a deck of cards (total 52)
+	///Create a deck of cards.
 	cout << "********** Game Begin *************" << endl;
 	DeckofCards game;
-	///Shuffle the deck
 	cout << "************ Shuffle **************"<<endl;
 	game.shuffle();
 	cout << endl;

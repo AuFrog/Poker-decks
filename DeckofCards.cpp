@@ -6,10 +6,11 @@
 
 using namespace std;
 
-int usedCard = 0;
 
 /**
-* Genarate a deck of cards (total 52)
+* Generate a deck of cards (total 52)
+* 
+* @param card The new generated card
 */
 DeckofCards::DeckofCards() {
 	for (int i = 0;i < allCard;i++) {
@@ -20,6 +21,8 @@ DeckofCards::DeckofCards() {
 
 /**
 * Shuffle the deck
+* 
+* @param swqpRandom[] Random number used for swap cards
 */
 void DeckofCards::shuffle() {
 	srand(time(0));
@@ -52,33 +55,22 @@ void DeckofCards::shuffle() {
 */
 vector<Card> DeckofCards::deal(string& s) {
 
-
 	std::lock_guard<std::mutex> lockGuard(mutex);
-
-	//if (usedCard == 50) {
-	//		cout << " Card is not enough for a next deal." << endl;
-	//}
 
 	vector<Card> temp;
 	cout << "Here is " << s << endl;
 
-
 	for (int i = 0;i < 5;i++) {
-		temp.push_back(deck[i + usedCard]);
-
-		//temp.push_back(deck[0]);
+		
+		temp.push_back(deck[0]);
 
 		cout << "thread ID: " << std::this_thread::get_id() << endl;
-		cout << deck[i + usedCard].toString() << endl;
+		cout << deck[0].toString() << endl;
 
-		//deck.erase(deck.begin());
-
+		deck.erase(deck.begin());
 	}
-
-	usedCard = usedCard + 5;
-	
-
 	cout << endl;
+
 	return temp;
 }
 

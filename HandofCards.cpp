@@ -5,10 +5,10 @@ HandofCards::HandofCards(string n) {
 	name = n;
 }
 
-
 void HandofCards::setRanking(int r) {
 	ranking = r;
 }
+
 int HandofCards::getRanking() {
 	return ranking;
 }
