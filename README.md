@@ -1,2 +1,2 @@
 # Poker-decks
-## multi-threaded C++  poker decks
+multi-threaded C++  poker decks
